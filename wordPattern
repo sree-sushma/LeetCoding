@@ -1,0 +1,21 @@
+class Solution:
+    def wordPattern(self, pattern: str, s: str) -> bool:
+        l2=s.split(" ")
+        l1=list(pattern)
+        if len(set(l2))!=len(set(l1)) or len(l1)!=len(l2):
+            print("1")
+            return False
+        d={}
+        l=[]
+        for i in range(len(l1)):
+            d.setdefault(l1[i], [])
+            
+            if l2[i] not in d[l1[i]]:
+                
+                d[l1[i]].append(l2[i])
+                l.append(l2[i])
+        for i in d.values():
+            print(len(i))
+            if len(i)>1:
+                return False
+        return True    
