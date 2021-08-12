@@ -1,0 +1,14 @@
+class Solution:
+    def destCity(self, paths: List[List[str]]) -> str:
+        list=[]
+        d={}
+        l=[]
+        for i in paths:
+            d[i[0]]=i[1]
+            list.append(i[0])
+            list.append(i[1])
+        l=set(list)
+        print(d)
+        for i in l:
+            if i not in d.keys():
+                return i
