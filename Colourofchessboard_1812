@@ -1,0 +1,13 @@
+#https://leetcode.com/problems/determine-color-of-a-chessboard-square/
+class Solution:
+    def squareIsWhite(self, coordinates: str) -> bool:
+        str1='aceg'
+        str2='bdfh'
+        if coordinates[0] in str1:
+            if int(coordinates[1])%2==0:
+                return True
+            return False
+        if coordinates[0] in str2:
+            if int(coordinates[1])%2==0:
+                return False
+            return True
