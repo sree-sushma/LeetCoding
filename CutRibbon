@@ -1,0 +1,36 @@
+def cutribbon(arr,k):
+    
+    n=len(arr)
+
+    mid=(n//2)
+    counting(arr,mid,k)
+
+def counting(arr,mid,k):
+    count=0
+    for x in range(mid,len(arr)):
+        count+=arr[x]//arr[mid]
+       
+
+            
+         
+
+    if count>=k:
+    
+        i=mid
+        j=len(arr)-1
+        mid=(i+j)//2
+        arr=arr[i:(j+1)]
+        counting(arr,mid,k)
+
+    
+    else:
+        
+        if (len(arr)==3):
+            print(arr[0])
+            
+            return (print(arr[0]))
+        j=mid 
+        mid=mid//2
+        arr=arr[j:(mid+1)]
+        counting(arr,mid,k)
+        
