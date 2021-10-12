@@ -1,0 +1,34 @@
+list=[]
+def outputIndex(nums,temp,target):
+  
+  if nums[temp]==target:
+    list.append(temp)
+    
+    temp=temp-1
+    
+    return outputIndex(nums,temp,target)
+  else:
+    nums=nums[temp+1:]
+    return searchRange(nums,target)
+
+def searchRange(nums,target):
+  first=0
+  last=len(nums)-1
+  mid=len(nums)//2
+  for i in range(len(nums)):
+    
+    if target==nums[mid]:
+      list.append(mid)
+     
+      temp=mid-1
+  
+      return (outputIndex(nums,temp,target))
+    elif target>nums[mid]:
+      
+      nums=nums[mid:]
+      
+      return searchRange(nums,target)
+    else:
+      nums=nums[first:mid]
+      return searchRange(nums,target)
+searchRange([5,7,7,8,8,10],8)
